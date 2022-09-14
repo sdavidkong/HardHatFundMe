@@ -11,7 +11,7 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  // defaultNetwork: "hardhat",
+  defaultNetwork: "hardhat",
   solidity: "0.8.9",
   networks: {
     goerli: {
@@ -29,5 +29,10 @@ module.exports = {
   },
   gasReporter: {
     enabled: true,
+  },
+  namedAccounts: {
+    deployer: {
+      default: 0,
+    },
   },
 };
