@@ -20,6 +20,7 @@ module.exports = {
       url: RPC_URL_GOERLI,
       accounts: [PRIVATE_KEY],
       chainId: 5,
+      blockConfirmations: 6,
     },
     localhost: {
       url: "http://127.0.0.1:8545/",
