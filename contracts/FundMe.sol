@@ -9,7 +9,7 @@ import "./PriceConverter.sol";
 error FundMe__NotOwner();
 
 /**@title A sample Funding Contract
- * @author Patrick Collins
+ * @author David Kong
  * @notice This contract is for creating a sample funding contract
  * @dev This implements price feeds as our library
  */
@@ -116,7 +116,7 @@ contract FundMe {
         return i_owner;
     }
 
-    function getPriceFeed() public view returns (AggregatorV3Interface) {
+    function PriceFeed() public view returns (AggregatorV3Interface) {
         return s_priceFeed;
     }
 }
