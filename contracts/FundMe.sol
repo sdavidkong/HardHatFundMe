@@ -4,9 +4,9 @@ pragma solidity ^0.8.0;
 // 2. Imports
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "./PriceConverter.sol";
+import "hardhat/console.sol";
 
 // 3. Interfaces, Libraries, Contracts
-error FundMe__NotOwner();
 
 /**@title A sample Funding Contract
  * @author David Kong
@@ -28,8 +28,7 @@ contract FundMe {
 
     // Modifiers
     modifier onlyOwner() {
-        // require(msg.sender == i_owner);
-        if (msg.sender != i_owner) revert FundMe__NotOwner();
+        require(msg.sender == i_owner, "FundMe_NotOwner");
         _;
     }
 
@@ -46,6 +45,7 @@ contract FundMe {
     constructor(address priceFeed) {
         s_priceFeed = AggregatorV3Interface(priceFeed);
         i_owner = msg.sender;
+        console.log(" FundMe contract is being deployed now!!!!!!!");
     }
 
     /// @notice Funds our contract based on the ETH/USD price
